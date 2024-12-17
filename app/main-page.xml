@@ -1,0 +1,91 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="bg-gray-100">
+    <ActionBar title="Statistics" class="bg-white text-black" flat="true" />
+    
+    <GridLayout rows="*, auto">
+        <!-- Main Content -->
+        <ScrollView row="0">
+            <StackLayout class="p-4 space-y-4">
+                <!-- Achievement Card -->
+                <GridLayout columns="*, auto" class="bg-blue-500 text-white p-4 rounded-lg">
+                    <StackLayout col="0">
+                        <Label text="achievement" class="text-sm opacity-80" />
+                        <Label text="Label" class="text-lg font-semibold" />
+                        <Label text="{{ totalCount }}" class="text-3xl font-bold mt-2" />
+                    </StackLayout>
+                    <Label text="JAN" col="1" class="text-right" />
+                </GridLayout>
+
+                <!-- Progress Bar -->
+                <GridLayout rows="auto, auto" class="mt-4">
+                    <StackLayout row="0" orientation="horizontal" class="justify-between">
+                        <Label text="{{ currentCount }}" class="text-sm text-gray-600" />
+                        <Label text="100%" class="text-sm text-gray-600" />
+                    </StackLayout>
+                    <Progress row="1" value="{{ progress }}" maxValue="100" class="bg-gray-200 mt-1" />
+                </GridLayout>
+
+                <!-- Working Days Card -->
+                <GridLayout class="bg-white p-4 rounded-lg">
+                    <StackLayout>
+                        <Label text="Available Working days" class="text-blue-500" />
+                        <Label text="{{ workingDays }}" class="text-2xl font-bold mt-1" />
+                    </StackLayout>
+                </GridLayout>
+
+                <!-- Statistics Grid -->
+                <GridLayout columns="*, *" rows="auto, auto" class="gap-4">
+                    <!-- More Stats -->
+                    <StackLayout col="0" row="0" class="bg-white p-4 rounded-lg">
+                        <Label text="MORE" class="text-sm text-gray-500" />
+                        <Label text="{{ moreCount }}" class="text-xl font-bold text-black" />
+                    </StackLayout>
+
+                    <!-- Percentage -->
+                    <StackLayout col="1" row="0" class="bg-white p-4 rounded-lg">
+                        <Label text="percentage" class="text-sm text-gray-500" />
+                        <Label text="{{ percentage }}%" class="text-xl font-bold text-black" />
+                    </StackLayout>
+
+                    <!-- Need for 100% -->
+                    <StackLayout col="0" row="1" class="bg-white p-4 rounded-lg">
+                        <Label text="need for 100%" class="text-sm text-gray-500" />
+                        <Label text="{{ needFor100 }}" class="text-xl font-bold text-black" />
+                    </StackLayout>
+
+                    <!-- Daily Percentage -->
+                    <StackLayout col="1" row="1" class="bg-white p-4 rounded-lg">
+                        <Label text="daily percentage" class="text-sm text-gray-500" />
+                        <Label text="{{ dailyPercentage }}%" class="text-xl font-bold text-black" />
+                    </StackLayout>
+                </GridLayout>
+
+                <!-- Add New Button -->
+                <Button text="ADD NEW CLIP" class="bg-blue-500 text-white font-semibold p-4 rounded-lg" tap="{{ onAddNewClip }}" />
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Bottom Navigation -->
+        <GridLayout row="1" columns="*, *, *, *, *" class="bg-white p-4 border-t border-gray-200">
+            <StackLayout col="0" class="text-center" tap="{{ onTabTap }}">
+                <Label text="★" class="text-2xl text-blue-500" />
+                <Label text="Tab 1" class="text-xs" />
+            </StackLayout>
+            <StackLayout col="1" class="text-center" tap="{{ onTabTap }}">
+                <Label text="★" class="text-2xl text-gray-400" />
+                <Label text="Tab 2" class="text-xs" />
+            </StackLayout>
+            <StackLayout col="2" class="text-center" tap="{{ onTabTap }}">
+                <Label text="★" class="text-2xl text-gray-400" />
+                <Label text="Tab 3" class="text-xs" />
+            </StackLayout>
+            <StackLayout col="3" class="text-center" tap="{{ onTabTap }}">
+                <Label text="★" class="text-2xl text-gray-400" />
+                <Label text="Tab 4" class="text-xs" />
+            </StackLayout>
+            <StackLayout col="4" class="text-center" tap="{{ onTabTap }}">
+                <Label text="★" class="text-2xl text-gray-400" />
+                <Label text="Tab 5" class="text-xs" />
+            </StackLayout>
+        </GridLayout>
+    </GridLayout>
+</Page>
